@@ -46,12 +46,13 @@ function App() {
             element={
               <ProtectRouteAuth auth={auth} role={accessAuthorizationUser} />
             }>
+            <Route path='*' element={<Attendance />} />
             <Route path='/attendance' element={<Attendance />} />
             <Route path='/permission' element={<Permission />} />
-            <Route
-              path='/authorization/error'
-              element={<AuthorizationError />}></Route>
           </Route>
+          <Route
+            path='/authorization/error'
+            element={<AuthorizationError />}></Route>
         </Routes>
       </BrowserRouter>
     </AuthApi.Provider>
