@@ -11,6 +11,7 @@ const SelectStatusAttendanceIn = (props) => {
           props.changeData("statusAttendanceIn", e.target.value)
         }>
         <option value=''>Filter Status</option>
+        <option value=''>All</option>
         <option value='not late'>Not Late</option>
         <option value='late'>Late</option>
       </select>

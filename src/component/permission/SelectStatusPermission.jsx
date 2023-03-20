@@ -9,6 +9,7 @@ const SelectStatusPermission = (props) => {
         value={props.statusApproval}
         onChange={(e) => props.changeData("statusApproval", e.target.value)}>
         <option value=''>Filter Status</option>
+        <option value=''>All</option>
         <option value='Waiting Approvel'>Waiting Approvel</option>
         <option value='Approved'>Approved</option>
         <option value='Rejected'>Rejected</option>
