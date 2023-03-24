@@ -108,10 +108,11 @@ const ModalDetailAttendance = (props) => {
                     Photo Attendance Out
                   </label>
                   {props.attendanceById.photoAttendanceOut ? (
-                    <img
-                      className='object-contain w-[120px] h-[140px] rounded-xl border-primary border-2'
+                    <ImageModal
                       src={props.attendanceById.photoAttendanceOut}
-                      alt='Attendance In'
+                      width='w-[120px]'
+                      height='h-[140px]'
+                      alt='Attendance Out'
                     />
                   ) : (
                     <div className='w-[120px] h-[140px] rounded-xl border-primary border-2 flex justify-center items-center'>
