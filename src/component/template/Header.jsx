@@ -1,7 +1,7 @@
 import React from "react"
 import AuthApi from "../../AuthApi"
 import SwitchTheme from "../switch-theme/SwitchTheme"
-import NotificationNavbar from "./NotificationNavbar"
+// import NotificationNavbar from "./NotificationNavbar"
 import ProfileNavbar from "./ProfileNavbar"
 
 function Header(props) {
@@ -28,7 +28,7 @@ function Header(props) {
           <SwitchTheme />
 
           {/* Notifications menu */}
-          <NotificationNavbar />
+          {/* <NotificationNavbar /> */}
 
           {/* Profile menu */}
           <ProfileNavbar />
