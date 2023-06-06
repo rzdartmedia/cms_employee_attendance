@@ -11,6 +11,7 @@ import Authentication from "./pages/Authentication"
 import Attendance from "./pages/Attendance"
 import AuthorizationError from "./pages/AuthorizationError"
 import Permission from "./pages/Permission"
+import ReportAttendance from "./pages/ReportAttendance"
 
 function App() {
   const [auth, setAuth] = useState(true)
@@ -36,7 +37,7 @@ function App() {
   return (
     <AuthApi.Provider value={{ auth, setAuth, pageActive, setPageActive }}>
       <ToastContainer />
-      <BrowserRouter basename='/'>
+      <BrowserRouter basename='/cms-attendance'>
         <Routes>
           <Route element={<ProtectRouteAuthIsLogin auth={auth} />}>
             <Route index element={<Authentication />} />
@@ -49,7 +50,9 @@ function App() {
             <Route path='*' element={<Attendance />} />
             <Route path='/attendance' element={<Attendance />} />
             <Route path='/permission' element={<Permission />} />
+            <Route path='/report-attendance' element={<ReportAttendance />} />
           </Route>
+
           <Route
             path='/authorization/error'
             element={<AuthorizationError />}></Route>

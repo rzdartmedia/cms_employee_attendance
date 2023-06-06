@@ -9,12 +9,13 @@ import ToastNotify from "../../utils/ToastNotify"
 
 const MainAuthentication = () => {
   const Auth = React.useContext(AuthApi)
+  const authenticationService = new AuthenticationService()
+  const userService = new UserService()
+
   const [nik, setNik] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
-  const authenticationService = new AuthenticationService()
-  const userService = new UserService()
 
   async function login(e) {
     e.preventDefault()
@@ -34,29 +35,34 @@ const MainAuthentication = () => {
       return false
     }
 
-    const result = await authenticationService.postAuthentication({
-      nik,
-      password,
-    })
-
-    if (result.status === "success") {
-      Cookies.set("refreshToken", result.data.refreshToken, { expires: 7 }) // expired 7 day
-
-      const accessToken = result.data.accessToken
-      const { data } = await userService.getUserById({ accessToken })
-      const user = data.employee
-      const dataUser = JSON.stringify({
-        name: user.name,
-        role: user.role,
-        nik: user.nik,
+    try {
+      const result = await authenticationService.postAuthentication({
+        nik,
+        password,
       })
 
-      Cookies.set("user", dataUser, { expires: 7 })
+      if (result.status === "success") {
+        Cookies.set("refreshToken", result.data.refreshToken, { expires: 7 }) // expired 7 day
 
-      Auth.setAuth(true)
-      setLoading(false)
-    } else {
-      ToastNotify("error", result.message)
+        const accessToken = result.data.accessToken
+        const { data } = await userService.getUserById({ accessToken })
+        const user = data.employee
+        const dataUser = JSON.stringify({
+          name: user.name,
+          role: user.role,
+          nik: user.nik,
+        })
+
+        Cookies.set("user", dataUser, { expires: 7 })
+
+        Auth.setAuth(true)
+        setLoading(false)
+      } else {
+        ToastNotify("error", result.message)
+        setLoading(false)
+      }
+    } catch (error) {
+      console.log(error)
       setLoading(false)
     }
   }

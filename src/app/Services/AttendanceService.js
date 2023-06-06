@@ -51,6 +51,37 @@ class AttendanceService {
         }
     }
 
+    async getAllAttendanceByMonth(payload) {
+        try {
+            const response = await this._axios({
+                method: 'GET',
+                url: `${this._endpoint}/cms/all/month?startMonth=${payload.startMonth}&endMonth=${payload.endMonth}&statusAttendanceIn=${payload.statusAttendanceIn}&search=${payload.search}`,
+                headers: {
+                    'Authorization': `Bearer ${payload.accessToken}`
+                }
+            });
+
+            return response.data;
+        } catch (error) {
+            return error;
+        }
+    }
+
+    async getAllAttendanceByMonthForTable(payload) {
+        try {
+            const response = await this._axios({
+                method: 'GET',
+                url: `${this._endpoint}/cms/all/month/table?page=${payload.page}&limit=${payload.limit}&startMonth=${payload.startMonth}&endMonth=${payload.endMonth}&statusAttendanceIn=${payload.statusAttendanceIn}&search=${payload.search}`,
+                headers: {
+                    'Authorization': `Bearer ${payload.accessToken}`
+                }
+            });
+
+            return response.data;
+        } catch (error) {
+            return error;
+        }
+    }
 }
 
 export default AttendanceService;

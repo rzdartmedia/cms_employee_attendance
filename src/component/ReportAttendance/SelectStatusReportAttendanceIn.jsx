@@ -1,11 +1,10 @@
 import React from "react"
 
-const SelectStatusAttendanceIn = (props) => {
+const SelectStatusReportAttendanceIn = (props) => {
   return (
-    <label htmlFor='selectStatusAttendanceIn'>
+    <label>
       <select
-        id='selectStatusAttendanceIn'
-        className='block w-full form-select rounded-lg shadow-xs border p-2 text-sm'
+        className='block w-full form-select rounded-lg shadow-md border p-2 text-sm'
         value={props.statusAttendanceIn}
         onChange={(e) =>
           props.changeData("statusAttendanceIn", e.target.value)
@@ -19,4 +18,4 @@ const SelectStatusAttendanceIn = (props) => {
   )
 }
 
-export default SelectStatusAttendanceIn
+export default SelectStatusReportAttendanceIn
