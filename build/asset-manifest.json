@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/cms-attendance/static/css/main.f347c029.css",
+    "main.js": "/cms-attendance/static/js/main.d0caee1f.js",
+    "static/media/login-office.jpeg": "/cms-attendance/static/media/login-office.0f3e03bfff77a5feee34.jpeg",
+    "static/media/login-office-dark.jpeg": "/cms-attendance/static/media/login-office-dark.357638d913afd678d660.jpeg",
+    "index.html": "/cms-attendance/index.html",
+    "static/media/no-camera.webp": "/cms-attendance/static/media/no-camera.672c3d5b7dbe3be3f56f.webp",
+    "main.f347c029.css.map": "/cms-attendance/static/css/main.f347c029.css.map",
+    "main.d0caee1f.js.map": "/cms-attendance/static/js/main.d0caee1f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f347c029.css",
+    "static/js/main.d0caee1f.js"
+  ]
+}
