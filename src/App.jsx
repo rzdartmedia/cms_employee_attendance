@@ -13,7 +13,6 @@ import AuthorizationError from "./pages/AuthorizationError"
 import Permission from "./pages/Permission"
 import ReportAttendance from "./pages/ReportAttendance"
 import Employee from "./pages/Employee"
-import MainReportAttendanceByMonth from "./component/ReportAttendanceByMonth/MainReportAttendanceByMonth"
 import AttendanceByMonth from "./pages/AttendanceByMonth"
 
 function App() {
