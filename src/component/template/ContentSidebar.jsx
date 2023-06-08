@@ -6,6 +6,7 @@ import {
   TbCalendarTime,
   TbReportAnalytics,
 } from "react-icons/tb"
+import { MdOutlineCalendarMonth, MdPeopleAlt } from "react-icons/md"
 import AuthApi from "../../AuthApi"
 
 const ContentSidebar = () => {
@@ -30,20 +31,7 @@ const ContentSidebar = () => {
             className='inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 sidebar-active'
             to={"/attendance"}>
             <TbFileTime />
-            <span className='ml-4 capitalize '>attendance</span>
-          </NavLink>
-        </li>
-        <li className='relative px-6 py-3'>
-          {Auth.pageActive === "permission" && (
-            <span
-              className='absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg'
-              aria-hidden='true'></span>
-          )}
-          <NavLink
-            className='inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 sidebar-active'
-            to={"/permission"}>
-            <TbCalendarTime />
-            <span className='ml-4 capitalize '>permission</span>
+            <span className='ml-4 capitalize '>Attendance</span>
           </NavLink>
         </li>
         <li className='relative px-6 py-3'>
@@ -57,6 +45,45 @@ const ContentSidebar = () => {
             to={"/report-attendance"}>
             <TbReportAnalytics />
             <span className='ml-4 capitalize '>Report Attendance</span>
+          </NavLink>
+        </li>
+        <li className='relative px-6 py-3'>
+          {Auth.pageActive === "attendance-by-month" && (
+            <span
+              className='absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg'
+              aria-hidden='true'></span>
+          )}
+          <NavLink
+            className='inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 sidebar-active'
+            to={"/attendance-by-month"}>
+            <MdOutlineCalendarMonth />
+            <span className='ml-4 capitalize '>Attendance By Month</span>
+          </NavLink>
+        </li>
+        <li className='relative px-6 py-3'>
+          {Auth.pageActive === "employee" && (
+            <span
+              className='absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg'
+              aria-hidden='true'></span>
+          )}
+          <NavLink
+            className='inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 sidebar-active'
+            to={"/employee"}>
+            <MdPeopleAlt />
+            <span className='ml-4 capitalize '>Employee</span>
+          </NavLink>
+        </li>
+        <li className='relative px-6 py-3'>
+          {Auth.pageActive === "permission" && (
+            <span
+              className='absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg'
+              aria-hidden='true'></span>
+          )}
+          <NavLink
+            className='inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 sidebar-active'
+            to={"/permission"}>
+            <TbCalendarTime />
+            <span className='ml-4 capitalize '>Permission</span>
           </NavLink>
         </li>
       </ul>

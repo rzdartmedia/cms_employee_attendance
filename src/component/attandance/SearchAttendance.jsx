@@ -19,7 +19,7 @@ const SearchAttendance = (props) => {
           className='p-1 appearance-none focus:outline-none dark:text-gray-300 rounded bg-transparent text-sm 3xl:text-base'
           id='searchLogTracker'
           type='search'
-          placeholder='search name user'
+          placeholder='search name'
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />

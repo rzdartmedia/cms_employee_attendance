@@ -5,6 +5,7 @@ const API_ENDPOINT = {
     USER: `${CONFIG.BASE_URL}/employee/user`,
     ATTENDANCE: `${CONFIG.BASE_URL}/attendance`,
     PERMISSIONS: `${CONFIG.BASE_URL}/permission`,
+    EMPLOYEE: `${CONFIG.BASE_URL}/employee`
 };
 
 export default API_ENDPOINT;

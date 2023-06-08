@@ -12,6 +12,9 @@ import Attendance from "./pages/Attendance"
 import AuthorizationError from "./pages/AuthorizationError"
 import Permission from "./pages/Permission"
 import ReportAttendance from "./pages/ReportAttendance"
+import Employee from "./pages/Employee"
+import MainReportAttendanceByMonth from "./component/ReportAttendanceByMonth/MainReportAttendanceByMonth"
+import AttendanceByMonth from "./pages/AttendanceByMonth"
 
 function App() {
   const [auth, setAuth] = useState(true)
@@ -48,9 +51,14 @@ function App() {
               <ProtectRouteAuth auth={auth} role={accessAuthorizationUser} />
             }>
             <Route path='*' element={<Attendance />} />
+            <Route path='/employee' element={<Employee />} />
             <Route path='/attendance' element={<Attendance />} />
-            <Route path='/permission' element={<Permission />} />
             <Route path='/report-attendance' element={<ReportAttendance />} />
+            <Route
+              path='/attendance-by-month'
+              element={<AttendanceByMonth />}
+            />
+            <Route path='/permission' element={<Permission />} />
           </Route>
 
           <Route

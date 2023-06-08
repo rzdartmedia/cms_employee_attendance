@@ -82,6 +82,22 @@ class AttendanceService {
             return error;
         }
     }
+
+    async getAttendanceDayByMonth(payload) {
+        try {
+            const response = await this._axios({
+                method: 'GET',
+                url: `${this._endpoint}/cms/day-by-month?page=${payload.page}&limit=${payload.limit}&month=${payload.month}&year=${payload.year}`,
+                headers: {
+                    'Authorization': `Bearer ${payload.accessToken}`
+                }
+            });
+
+            return response.data;
+        } catch (error) {
+            return error;
+        }
+    }
 }
 
 export default AttendanceService;
