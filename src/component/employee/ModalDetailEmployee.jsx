@@ -77,9 +77,9 @@ const ModalDetailEmployee = (props) => {
                   <label className='block text-gray-700 text-sm font-bold mb-1 dark:text-gray-300'>
                     Photo NPWP
                   </label>
-                  {props.employee.photoKtp ? (
+                  {props.employee.photoNpwp ? (
                     <ImageModal
-                      src={props.employee.photoKtp}
+                      src={props.employee.photoNpwp}
                       width='w-[120px]'
                       height='h-[140px]'
                       alt='Attendance Out'
