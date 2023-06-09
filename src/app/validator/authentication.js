@@ -3,9 +3,9 @@ const ValidatorAuthentication = {
         let errors = {};
         let formIsValid = true;
 
-        if (!data.nik) {
+        if (!data.noHp) {
             formIsValid = false;
-            errors["nik"] = "Please enter the nik";
+            errors["noHp"] = "Please enter the number phone";
         }
 
         if (!data.password) {

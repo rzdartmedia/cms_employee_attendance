@@ -12,7 +12,7 @@ const MainAuthentication = () => {
   const authenticationService = new AuthenticationService()
   const userService = new UserService()
 
-  const [nik, setNik] = useState("")
+  const [noHp, setNoHp] = useState("")
   const [password, setPassword] = useState("")
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
@@ -25,7 +25,7 @@ const MainAuthentication = () => {
     // validation form
     const { errors: errorValidate, formIsValid } =
       ValidatorAuthentication.validatePostAuthentication({
-        nik,
+        noHp,
         password,
       })
 
@@ -37,7 +37,7 @@ const MainAuthentication = () => {
 
     try {
       const result = await authenticationService.postAuthentication({
-        nik,
+        noHp,
         password,
       })
 
@@ -50,7 +50,7 @@ const MainAuthentication = () => {
         const dataUser = JSON.stringify({
           name: user.name,
           role: user.role,
-          nik: user.nik,
+          noHp: user.noHp,
         })
 
         Cookies.set("user", dataUser, { expires: 7 })
@@ -92,15 +92,17 @@ const MainAuthentication = () => {
               </h1>
               <form onSubmit={(e) => login(e)}>
                 <label className='block text-sm'>
-                  <span className='text-gray-700 dark:text-gray-400'>NIK</span>
+                  <span className='text-gray-700 dark:text-gray-400'>
+                    Number Phone
+                  </span>
                   <input
                     className='block w-full mt-1 border border-gray-300 rounded-md px-2 py-2 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-blue-600 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input'
-                    value={nik}
+                    value={noHp}
                     type='number'
-                    onChange={(e) => setNik(e.target.value)}
-                    placeholder='124151232153'
+                    onChange={(e) => setNoHp(e.target.value)}
+                    placeholder='08********'
                   />
-                  <div className='text-error'>{errors.nik}</div>
+                  <div className='text-error'>{errors.noHp}</div>
                 </label>
                 <label className='block mt-4 text-sm'>
                   <span className='text-gray-700 dark:text-gray-400'>

@@ -12,7 +12,7 @@ class AuthenticationService {
         try {
 
             const data = JSON.stringify({
-                nik: payload.nik,
+                noHp: payload.noHp,
                 password: payload.password
             });
 

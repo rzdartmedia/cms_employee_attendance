@@ -87,12 +87,8 @@ const TableEmployee = (props) => {
                     </div>
                   </td>
                   <td className='px-2 py-3 text-sm capitalize'>{data.no_hp}</td>
-                  <td className='px-2 py-3 text-sm capitalize'>
-                    {data.email_employee}
-                  </td>
-                  <td className='px-2 py-3 text-sm capitalize'>
-                    {data.email_personal}
-                  </td>
+                  <td className='px-2 py-3 text-sm'>{data.email_employee}</td>
+                  <td className='px-2 py-3 text-sm'>{data.email_personal}</td>
                   <td className='px-2 py-3 text-sm capitalize'>
                     {data.gender}
                   </td>

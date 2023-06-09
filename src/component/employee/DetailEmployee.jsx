@@ -59,14 +59,14 @@ const DetailEmployee = (props) => {
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.npwp}</td>
           </tr>
-          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 capitalize'>
+          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700'>
             <th
               scope='row'
               className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-              place and date Of Birth
+              Place and Date Of Birth
             </th>
             <td className='px-2 py-2'>:</td>
-            <td className='px-2 py-2'>
+            <td className='px-2 py-2 capitalize'>
               {props.employee?.placeOfBirth}, {props.employee?.dateOfBirth}
             </td>
           </tr>
@@ -106,19 +106,19 @@ const DetailEmployee = (props) => {
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.religion}</td>
           </tr>
-          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 capitalize'>
+          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 '>
             <th
               scope='row'
-              className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+              className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white capitalize'>
               email Personal
             </th>
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.emailPersonal}</td>
           </tr>
-          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 capitalize'>
+          <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 '>
             <th
               scope='row'
-              className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
+              className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white capitalize'>
               email Employee
             </th>
             <td className='px-2 py-2'>:</td>
@@ -155,7 +155,7 @@ const DetailEmployee = (props) => {
             <th
               scope='row'
               className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-              connectionFamily
+              connection Family
             </th>
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.connectionFamily}</td>
@@ -164,7 +164,7 @@ const DetailEmployee = (props) => {
             <th
               scope='row'
               className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-              noHpFamily
+              Number Phone Family
             </th>
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.noHpFamily}</td>
@@ -173,7 +173,7 @@ const DetailEmployee = (props) => {
             <th
               scope='row'
               className='px-2 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
-              workLocation
+              work Location
             </th>
             <td className='px-2 py-2'>:</td>
             <td className='px-2 py-2'>{props.employee?.workLocation}</td>
