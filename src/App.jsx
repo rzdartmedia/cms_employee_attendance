@@ -14,6 +14,7 @@ import Permission from "./pages/Permission"
 import ReportAttendance from "./pages/ReportAttendance"
 import Employee from "./pages/Employee"
 import AttendanceByMonth from "./pages/AttendanceByMonth"
+import Profile from "./pages/Profile"
 
 function App() {
   const [auth, setAuth] = useState(true)
@@ -58,6 +59,7 @@ function App() {
               element={<AttendanceByMonth />}
             />
             <Route path='/permission' element={<Permission />} />
+            <Route path='/profile' element={<Profile />} />
           </Route>
 
           <Route

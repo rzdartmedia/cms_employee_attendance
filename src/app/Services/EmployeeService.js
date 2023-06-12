@@ -46,7 +46,7 @@ class EmployeeService {
 
         const response = await this._axios({
             method: "PUT",
-            url: `${this._endpoint}/${payload.nik}`,
+            url: `${this._endpoint}/status/${payload.nik}`,
             headers: {
                 Authorization: `Bearer ${payload.accessToken}`,
                 "Content-Type": "application/json",
