@@ -132,7 +132,7 @@ const FormChangePassword = (props) => {
                   <div className='text-red-500'>{errors.passwordNew}</div>
                 </td>
               </tr>
-              <tr className='bg-white text-sm lg:text-base text-black border-b dark:bg-gray-800 dark:border-gray-700 capitalize'>
+              <tr className='bg-white text-sm text-black border-b dark:bg-gray-800 dark:border-gray-700 capitalize'>
                 <th
                   scope='row'
                   className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'>
