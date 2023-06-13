@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/cms-attendance/static/css/main.efebb9fa.css",
-    "main.js": "/cms-attendance/static/js/main.e33be76b.js",
+    "main.css": "/cms-attendance/static/css/main.bce16ecb.css",
+    "main.js": "/cms-attendance/static/js/main.ea0adb57.js",
     "static/media/login-office.jpeg": "/cms-attendance/static/media/login-office.0f3e03bfff77a5feee34.jpeg",
     "static/media/login-office-dark.jpeg": "/cms-attendance/static/media/login-office-dark.357638d913afd678d660.jpeg",
     "index.html": "/cms-attendance/index.html",
     "static/media/no-camera.webp": "/cms-attendance/static/media/no-camera.672c3d5b7dbe3be3f56f.webp",
-    "main.efebb9fa.css.map": "/cms-attendance/static/css/main.efebb9fa.css.map",
-    "main.e33be76b.js.map": "/cms-attendance/static/js/main.e33be76b.js.map"
+    "main.bce16ecb.css.map": "/cms-attendance/static/css/main.bce16ecb.css.map",
+    "main.ea0adb57.js.map": "/cms-attendance/static/js/main.ea0adb57.js.map"
   },
   "entrypoints": [
-    "static/css/main.efebb9fa.css",
-    "static/js/main.e33be76b.js"
+    "static/css/main.bce16ecb.css",
+    "static/js/main.ea0adb57.js"
   ]
 }
