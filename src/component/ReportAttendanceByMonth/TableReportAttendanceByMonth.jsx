@@ -26,6 +26,13 @@ const TableReportAttendanceByMonth = (props) => {
     <div className='m-4'>
       <div className='flex flex-wrap justify-between items-center gap-4 mb-2'>
         <FilterMonthReportAttendanceByMonth changeData={props.changeData} />
+        <div className='self-end'>
+          <button
+            onClick={props.getExportAttendanceDayByMonthExcel}
+            className='text-white bg-primary dark:bg-gray-700 dark:border-white dark:border hover:drop-shadow-xl focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:hover:bg-gray-600 dark:hover:text-gray-200'>
+            Export to Excel
+          </button>
+        </div>
       </div>
       <div className='w-full overflow-hidden rounded-lg shadow-xs border'>
         <div className='w-full overflow-auto'>

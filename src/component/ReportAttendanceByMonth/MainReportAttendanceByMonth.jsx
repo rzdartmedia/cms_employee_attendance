@@ -56,6 +56,37 @@ const MainReportAttendanceByMonth = () => {
     setIsLoading(false)
   }
 
+  async function getExportAttendanceDayByMonthExcel() {
+    setIsLoading(true)
+    const accessToken = await RefreshTokenService()
+    if (accessToken === "fail") {
+      Auth.setAuth(false)
+      Cookies.remove("refreshToken")
+      Cookies.remove("user")
+    }
+
+    const result = await attendanceService.getExportAttendanceDayByMonthExcel({
+      accessToken,
+      month: month?.month || "",
+      year: month?.year || "",
+    })
+
+    if (result.status === "success") {
+      const linkExcel = result.data.link
+      window.open(linkExcel, "_blank")
+    } else {
+      if (result.response) {
+        if (result.response.data) {
+          ToastNotify("error", result.response.data.message)
+        }
+      } else {
+        ToastNotify("error", "Internal server error/Your computer offline")
+      }
+    }
+
+    setIsLoading(false)
+  }
+
   return (
     <main className='h-full overflow-y-auto'>
       <div className='mx-auto'>
@@ -64,6 +95,9 @@ const MainReportAttendanceByMonth = () => {
           attendances={attendances}
           month={month}
           changeData={changeData}
+          getExportAttendanceDayByMonthExcel={
+            getExportAttendanceDayByMonthExcel
+          }
         />
       </div>
     </main>

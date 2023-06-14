@@ -98,6 +98,22 @@ class AttendanceService {
             return error;
         }
     }
+
+    async getExportAttendanceDayByMonthExcel(payload) {
+        try {
+            const response = await this._axios({
+                method: 'GET',
+                url: `${this._endpoint}/cms/day-by-month/excel?month=${payload.month}&year=${payload.year}`,
+                headers: {
+                    'Authorization': `Bearer ${payload.accessToken}`
+                }
+            });
+
+            return response.data;
+        } catch (error) {
+            return error;
+        }
+    }
 }
 
 export default AttendanceService;
