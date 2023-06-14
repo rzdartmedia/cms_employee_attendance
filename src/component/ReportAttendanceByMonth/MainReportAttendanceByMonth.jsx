@@ -15,51 +15,24 @@ const MainReportAttendanceByMonth = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const [attendances, setAttendances] = useState([])
-  const [totalData, setTotalData] = useState(0)
-  const [totalPages, setTotalPages] = useState(1)
-  const [page, setPage] = useState(1)
-  const [limit, setLimit] = useState(15)
   const [month, setMonth] = useState({})
 
   useEffect(() => {
-    getAttendanceDayByMonth({ page, dataLimit: limit })
+    getAttendanceDayByMonth()
   }, [])
-
-  const changePage = ({ selected }) => {
-    setPage(selected + 1)
-    getAttendanceDayByMonth({
-      page: selected + 1,
-      dataLimit: limit,
-      month: month,
-    })
-  }
 
   function changeData(data, value) {
     switch (data) {
-      case "limit":
-        setPage(1)
-        setLimit(value)
-        getAttendanceDayByMonth({
-          page: 1,
-          dataLimit: value,
-          month: month,
-        })
-        break
       case "month":
-        setPage(1)
         setMonth(value)
-        getAttendanceDayByMonth({
-          page: 1,
-          dataLimit: limit,
-          month: value,
-        })
+        getAttendanceDayByMonth(value)
         break
       default:
         console.log("change data is not defined")
     }
   }
 
-  async function getAttendanceDayByMonth({ page, dataLimit, month }) {
+  async function getAttendanceDayByMonth(month) {
     setIsLoading(true)
     const accessToken = await RefreshTokenService()
     if (accessToken === "fail") {
@@ -70,16 +43,12 @@ const MainReportAttendanceByMonth = () => {
 
     const result = await attendanceService.getAttendanceDayByMonth({
       accessToken,
-      page,
-      limit: dataLimit,
-      month: month?.month,
-      year: month?.year,
+      month: month?.month || "",
+      year: month?.year || "",
     })
 
     if (result.status === "success") {
       setAttendances(result.data.attendances)
-      setTotalData(result.totalData)
-      setTotalPages(result.totalPages)
     } else {
       ToastNotify("error", result.message)
     }
@@ -93,12 +62,7 @@ const MainReportAttendanceByMonth = () => {
         {isLoading && <LoadingSpinner />}
         <TableReportAttendanceByMonth
           attendances={attendances}
-          page={page}
-          totalData={totalData}
-          totalPages={totalPages}
-          limit={limit}
           month={month}
-          changePage={changePage}
           changeData={changeData}
         />
       </div>
